@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rafael Madrid</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    body {
+        background: black;
+        color: white;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 35px 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all .50s ease;
+        background-color: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+    }
+
+    .li-list {
+        display: flex;
+    }
+
+    .li-list a {
+        display: inline-block;
+        margin: 0 35px;
+        color: #fff;
+        font-size: 1rem;
+        transition: all 0.6s ease;
+    }
+
+    .li-list a:hover {
+        color: chocolate;
+    }
+
+    .contact-section {
+        padding: 150px 7% 50px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .contact-container {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-header {
+        text-align: center;
+        max-width: 800px;
+        margin-bottom: 60px;
+    }
+
+    .contact-title {
+        font-size: 3.5rem;
+        background: linear-gradient(45deg, chocolate, #ff7b00, #5a189a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 20px;
+        font-weight: 900;
+    }
+
+    .contact-subtitle {
+        font-size: 1.2rem;
+        color: #aaa;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .contact-content {
+        display: flex;
+        gap: 40px;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .contact-left, .contact-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 600px;
+    }
+
+    .contact-cards {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .contact-card {
+        background: rgba(26, 26, 26, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: left;
+        flex: 1;
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: chocolate;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: white;
+        text-align: center;
+    }
+
+    .card-content {
+        color: #ccc;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .contact-card a {
+        color: #00acee;
+        transition: color 0.3s ease;
+        word-break: break-all;
+    }
+
+    .contact-card a:hover {
+        color: chocolate;
+    }
+
+    /* Contact Form Styles */
+    .contact-form-container {
+        background: rgba(26, 26, 26, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .form-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: white;
+        text-align: center;
+        background: linear-gradient(45deg, chocolate, #ff7b00);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .form-group label {
+        color: #ccc;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: chocolate;
+        box-shadow: 0 0 0 2px rgba(210, 105, 30, 0.2);
+    }
+
+    .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+        flex: 1;
+    }
+
+    .submit-btn {
+        background: linear-gradient(45deg, chocolate, #ff7b00);
+        color: white;
+        border: none;
+        padding: 18px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(210, 105, 30, 0.3);
+        background: linear-gradient(45deg, #d2691e, #ff8c00);
+    }
+
+    .submit-btn:active {
+        transform: translateY(-1px);
+    }
+
+    @media (max-width: 992px) {
+        .contact-title {
+            font-size: 2.5rem;
+        }
+        
+        .contact-content {
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .contact-left, .contact-right {
+            width: 100%;
+            min-height: auto;
+        }
+        
+        .contact-card {
+            min-height: 150px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .li-list a {
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+        
+        header {
+            padding: 20px 5%;
+        }
+        
+        .contact-section {
+            padding: 120px 5% 30px;
+        }
+        
+        .contact-title {
+            font-size: 2rem;
+        }
+        
+        .contact-card {
+            padding: 20px;
+        }
+        
+        .contact-form-container {
+            padding: 30px 20px;
+        }
+        
+        .form-title {
+            font-size: 1.8rem;
+        }
+        
+        .contact-header {
+            margin-bottom: 40px;
+        }
+    }
+
+    html, body {
+        overflow: auto;
+        height: auto;
+        min-height: 100vh;
+    }
+</style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="image/RAFAEL.png" alt="">
+        </a>
+
+        <ul class="li-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="bx-bxmenu" id="menu-icon"> </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Centered Header Section -->
+            <div class="contact-header" data-aos="fade-up">
+                <h1 class="contact-title">Get In Touch</h1>
+                <p class="contact-subtitle">
+                    Let's create something amazing together! Feel free to reach out through any of the channels below. 
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                </p>
+            </div>
+
+            <!-- Two Column Content -->
+            <div class="contact-content">
+                <!-- Left Side: Contact Information -->
+                <div class="contact-left" data-aos="fade-right">
+                    <div class="contact-info">
+                        <div class="contact-cards">
+                            <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                                <div class="card-icon">
+                                    <i class="ri-mail-fill"></i>
+                                </div>
+                                <h3 class="card-title">Email</h3>
+                                <p class="card-content">
+                                    <a href="mailto:rafaelmadrid006@gmail.com">rafaelmadrid006@gmail.com</a>
+                                </p>
+                            </div>
+                            
+                            <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                                <div class="card-icon">
+                                    <i class="ri-facebook-fill"></i>
+                                </div>
+                                <h3 class="card-title">Facebook</h3>
+                                <p class="card-content">
+                                    <a href="https://www.facebook.com/share/19H7BZN7Hq/" target="_blank">facebook.com/rafaelmadrid</a>
+                                </p>
+                            </div>
+                            
+                            <div class="contact-card" data-aos="fade-up" data-aos-delay="400">
+                                <div class="card-icon">
+                                    <i class="ri-instagram-fill"></i>
+                                </div>
+                                <h3 class="card-title">Instagram</h3>
+                                <p class="card-content">
+                                    <a href="#" target="_blank">@rapael.0109</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Contact Form -->
+                <div class="contact-right" data-aos="fade-left" data-aos-delay="500">
+                    <div class="contact-form-container">
+                        <h2 class="form-title">Send Me a Message</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name </label>
+                                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Your Email </label>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject </label>
+                                <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message </label>
+                                <textarea id="message" name="message" required placeholder="Tell me about your project or inquiry..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                Send Message <i class="ri-send-plane-fill" style="margin-left: 8px;"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
